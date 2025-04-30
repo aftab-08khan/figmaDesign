@@ -4,3 +4,19 @@
 body {
   font-family: "Epilogue", sans-serif;
 }
+.accordion-content {
+  display: none;
+}
+
+input:checked + label + .accordion-content {
+  display: block;
+}
+
+input:checked + label img {
+  transform: rotate(180deg);
+}
+.map-bg {
+  background-image: url("./images/map.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
