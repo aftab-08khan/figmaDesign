@@ -13,7 +13,7 @@
     <title>Figma Design</title>
   </head>
   <body>
-    <section class="bg-[#28293E] w-full min-h-screen flex justify-center">
+    <section class="bg-[#28293E] w-full flex justify-center">
       <div class="max-w-7xl mx-auto px-4 w-full">
         <header class="flex justify-between items-center w-full py-6">
           <div>
@@ -24,9 +24,26 @@
             />
           </div>
 
+          <div class="md:hidden">
+            <button id="menu-btn" class="text-white focus:outline-none">
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                ></path>
+              </svg>
+            </button>
+          </div>
+
           <nav
-            role="navigation"
-            aria-label="Main Navigation"
             class="hidden md:flex space-x-10 text-white text-[16px] font-light leading-[32px] text-center w-1/2 justify-between items-center"
           >
             <a href="#" class="hover:text-gray-300 transition">About</a>
@@ -37,14 +54,31 @@
 
           <button
             type="button"
-            class="bg-[#28293E] text-white uppercase tracking-wider px-6 py-2 rounded-md text-sm font-medium border border-white hover:bg-white hover:text-[#28293E] transition mx-4"
+            class="hidden md:block bg-[#28293E] text-white uppercase tracking-wider px-6 py-2 rounded-md text-sm font-medium border border-white hover:bg-white hover:text-[#28293E] transition"
           >
             Contact
           </button>
         </header>
 
-        <main class="flex flex-col md:flex-row justify-between py-12">
-          <div class="max-w-xl text-center md:text-left relative">
+        <nav
+          id="mobile-menu"
+          class="md:hidden hidden flex-col gap-4 text-white text-center pb-4"
+        >
+          <a href="#" class="block py-2">About</a>
+          <a href="#" class="block py-2">Services</a>
+          <a href="#" class="block py-2">Pricing</a>
+          <a href="#" class="block py-2">Blog</a>
+          <button
+            class="bg-[#28293E] text-white uppercase tracking-wider px-6 py-2 rounded-md text-sm font-medium border border-white hover:bg-white hover:text-[#28293E] transition"
+          >
+            Contact
+          </button>
+        </nav>
+
+        <main
+          class="flex flex-col-reverse md:flex-row justify-between items-center py-12 gap-12"
+        >
+          <div class="max-w-xl md:text-left relative">
             <span class="text-md text-[#EF6D58] uppercase tracking-wider">
               Modern Studio
             </span>
@@ -54,18 +88,16 @@
                 src="./images/Star.svg"
                 alt="star image"
                 aria-hidden="true"
-                class="absolute right-[152px] top-[-40px] z-0"
+                class="absolute right-[152px] top-[-40px] z-0 hidden md:block"
               />
               <h1
-                class="font-extrabold text-[72px] leading-[80px] tracking-[-2px] text-white relative z-10"
+                class="font-extrabold text-[56px] md:text-[72px] leading-[70px] md:leading-[80px] tracking-[-1px] md:tracking-[-2px] text-white relative z-10"
               >
                 We’re Help <br />To Build Your Dream Project
               </h1>
             </div>
 
-            <p
-              class="mt-4 text-base font-normal text-[#FFFFFFA3] leading-[32px]"
-            >
+            <p class="mt-4 text-base font-md text-[#FFFFFFA3] leading-[32px]">
               Agency provides a full service range including technical skills,
               design, business understanding.
             </p>
@@ -73,45 +105,53 @@
             <div class="mt-10 space-x-4">
               <button
                 type="button"
-                class="bg-[#EF6D58] text-white px-6 py-2 rounded-md hover:bg-[#d65b46] transition"
+                class="bg-[#EF6D58] text-white text-md px-6 py-2 rounded-md hover:bg-[#d65b46] transition"
               >
                 How We Work
               </button>
               <button
                 type="button"
-                class="border border-white text-white px-6 py-2 rounded-md hover:bg-white hover:text-[#28293E] transition"
+                class="border border-white text-md text-white px-6 py-2 rounded-md hover:bg-white hover:text-[#28293E] transition"
               >
                 Contact Us
               </button>
             </div>
-            <div class="flex gap-6 mt-36 px-4">
-              <img src="./images/Bitmap.svg" alt="Bit map image" />
-              <div class="flex flex-col">
+
+            <div class="flex gap-4 mt-12 px-4 items-start">
+              <img
+                src="./images/Bitmap.svg"
+                alt="Bit map image"
+                class="w-12 h-12"
+              />
+              <div class="flex flex-col text-left">
                 <p
                   class="font-normal text-base leading-[32px] text-[#FFFFFFA3]"
                 >
                   "Put themselves in the merchant's shoes"
                 </p>
-                <span class="font-normal text-base leading-[32px] text-white"
-                  >Meta Inc.</span
-                >
+                <span class="font-normal text-base leading-[32px] text-white">
+                  Meta Inc.
+                </span>
               </div>
             </div>
           </div>
 
-          <div class="mt-8 md:mt-0">
+          <div class="w-full md:w-1/2">
             <img
               src="./images/pic.png"
               alt="Team working illustration"
-              class="max-w-full h-auto"
+              class="max-w-full h-auto mx-auto"
             />
           </div>
         </main>
       </div>
     </section>
+
     <section class="bg-[#FDF0E9] py-14">
       <div class="max-w-7xl mx-auto px-4 w-full">
-        <div class="flex flex-wrap justify-between items-center gap-6 pb-12">
+        <div
+          class="flex flex-wrap items-center gap-6 pb-12 justify-around lg:justify-between"
+        >
           <img src="./images/brand1.svg" alt="Brand 1 Logo" />
           <img src="./images/brand2.svg" alt="Brand 2 Logo" />
           <img src="./images/brand3.svg" alt="Brand 3 Logo" />
@@ -121,7 +161,7 @@
 
         <hr class="border-t border-[#F3D1BF] mb-12" />
 
-        <article class="flex flex-col md:flex-row items-center gap-42">
+        <article class="flex flex-col md:flex-row items-center gap-42 my-20">
           <figure class="w-full md:w-1/2">
             <img
               src="./images/pic.svg"
@@ -138,9 +178,9 @@
                 About
               </span>
               <h2
-                class="font-extrabold text-[56px] leading-[64px] tracking-[-1px] text-[#391400] mb-2"
+                class="font-extrabold md:text-[56px] text-[40px] leading-[64px] tracking-[-1px] text-[#391400] mb-2"
               >
-                An Experience <br />
+                An Experience<br />
                 Design Agency
               </h2>
               <p class="text-[#391400] font-normal text-[20px] leading-[32px]">
@@ -162,24 +202,27 @@
           </div>
         </article>
 
-        <div class="border-2 border-[#F3D1BF] rounded-lg mt-20">
-          <div class="grid grid-cols-3 w-full items-center">
-            <div class="flex flex-col p-12 gap-4">
+        <div class="border-2 border-[#F3D1BF] rounded-lg my-20">
+          <div class="grid grid-cols-1 md:grid-cols-3 w-full items-center">
+            <div
+              class="flex flex-col p-12 gap-4 border-[#F3D1BF] border-b md:border-b-0"
+            >
               <span class="font-extrabold text-[40px] leading-[48px]">42%</span>
               <p class="font-normal text-[20px] leading-[32px]">
                 Years of experience
               </p>
             </div>
             <div
-              class="flex flex-col p-12 border-l border-r border-[#F3D1BF] gap-4"
+              class="flex flex-col p-12 border-l border-r border-[#F3D1BF] gap-4 border-b md:border-b-0"
             >
               <span class="font-extrabold text-[40px] leading-[48px]">73+</span>
               <p class="font-normal text-[20px] leading-[32px]">
                 Agency members
               </p>
             </div>
-
-            <div class="flex flex-col p-12 gap-4">
+            <div
+              class="flex flex-col p-12 gap-4 border-[#F3D1BF] border-b md:border-b-0"
+            >
               <span class="font-extrabold text-[40px] leading-[48px]"
                 >5.000</span
               >
@@ -189,6 +232,7 @@
             </div>
           </div>
         </div>
+
         <div
           class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center gap-16"
         >
@@ -211,7 +255,7 @@
             </header>
             <a
               href="#"
-              class="inline-block mt-4 font-normal text-[16px] leading-[32px] text-[#391400] underline hover:text-[#EF6D58] transition"
+              class="inline-block mt-4 font-normal text-[16px] leading-[32px] text-[#391400] no-underline hover:text-[#EF6D58] transition"
             >
               Read more
             </a>
@@ -259,12 +303,12 @@
           </div>
         </div>
         <hr class="border-t border-[#F3D1BF] my-12" />
-        <div class="flex flex-col md:flex-row items-center gap-32 mt-20">
+        <div class="flex flex-col md:flex-row items-center gap-32 my-20">
           <div class="w-full md:w-1/2">
             <video
               src="https://media.istockphoto.com/id/1140348751/video/landscape-of-japan-with-mountain-fuji-and-cherry-blossom-sakura-at-ryuganbuchi-shizuoka-japan.mp4?s=mp4-640x640-is&k=20&c=G1bLrfKBcGqH0gfmNMaKIbg5_PR0A2lCdkc-pxEbckc="
               controls
-              class="w-full rounded-lg shadow-md"
+              class="w-full h-full rounded-lg shadow-md"
             ></video>
           </div>
 
@@ -294,17 +338,41 @@
         <div class="flex flex-col gap-12">
           <h5
             class="text-[#EF6D58] font-normal text-[16px] leading-[32px] tracking-[3px] text-center uppercase"
+            aria-label="Portfolio section"
           >
             Portfolio
           </h5>
           <h2
             class="text-white font-extrabold text-[56px] leading-[64px] tracking-[-1px] text-center"
+            aria-label="Latest Work heading"
           >
             Latest Work
           </h2>
-          <ul class="flex self-center gap-12">
+
+          <div class="block md:hidden">
+            <label for="portfolio-select" class="sr-only"
+              >Select portfolio category</label
+            >
+            <select
+              id="portfolio-select"
+              class="bg-[#fff] text-[#391400] font-light text-[16px] leading-[32px] px-4 py-2 rounded-md w-full"
+              aria-label="Portfolio category select"
+            >
+              <option value="showAll">Show All (14)</option>
+              <option value="design">Design (6)</option>
+              <option value="branding">Branding (4)</option>
+              <option value="illustration">Illustration (3)</option>
+              <option value="motion">Motion (1)</option>
+            </select>
+          </div>
+
+          <ul
+            class="hidden md:flex self-center gap-12"
+            aria-label="Portfolio categories"
+          >
             <li
               class="font-light text-[16px] leading-[32px] text-white flex gap-2"
+              role="listitem"
             >
               Show All
               <span class="font-normal text-[14px] leading-[24px] mt-[-10px]"
@@ -313,6 +381,7 @@
             </li>
             <li
               class="font-light text-[16px] leading-[32px] text-white flex gap-2"
+              role="listitem"
             >
               Design
               <span class="font-normal text-[14px] leading-[24px] mt-[-10px]"
@@ -321,6 +390,7 @@
             </li>
             <li
               class="font-light text-[16px] leading-[32px] text-white flex gap-2"
+              role="listitem"
             >
               Branding
               <span class="font-normal text-[14px] leading-[24px] mt-[-10px]"
@@ -329,6 +399,7 @@
             </li>
             <li
               class="font-light text-[16px] leading-[32px] text-white flex gap-2"
+              role="listitem"
             >
               Illustration
               <span class="font-normal text-[14px] leading-[24px] mt-[-10px]"
@@ -337,6 +408,7 @@
             </li>
             <li
               class="font-light text-[16px] leading-[32px] text-white flex gap-2"
+              role="listitem"
             >
               Motion
               <span class="font-normal text-[14px] leading-[24px] mt-[-10px]"
@@ -345,8 +417,13 @@
             </li>
           </ul>
         </div>
-        <article class="grid grid-cols-12 gap-4 mt-20">
-          <div class="col-span-5 relative">
+
+        <article
+          class="grid grid-cols-1 md:grid-cols-12 gap-4 mt-20"
+          aria-label="Portfolio works"
+          role="region"
+        >
+          <div class="md:col-span-5 relative">
             <img
               src="./images/work1.svg"
               alt="Modern sofa design illustration"
@@ -368,7 +445,7 @@
             </div>
           </div>
 
-          <div class="col-span-7 relative">
+          <div class="md:col-span-7 relative">
             <img
               src="./images/work2.svg"
               alt="Branding concept with keyboard layout"
@@ -376,7 +453,6 @@
             />
             <div
               class="absolute bottom-4 left-4 text-white space-y-1 ml-6 flex flex-col items-baseline mb-6"
-              mb-6
             >
               <span
                 class="inline-block bg-white bg-opacity-50 px-4 py-[2px] rounded-3xl font-normal text-base leading-8 text-black mb-4"
@@ -391,7 +467,7 @@
             </div>
           </div>
 
-          <div class="col-span-7 relative">
+          <div class="md:col-span-7 relative">
             <img
               src="./images/work3.svg"
               alt="Creative illustration work media project"
@@ -399,7 +475,6 @@
             />
             <div
               class="absolute bottom-4 left-4 text-white space-y-1 ml-6 flex flex-col items-baseline mb-6"
-              mb-6
             >
               <span
                 class="inline-block bg-white bg-opacity-50 px-4 py-[2px] rounded-3xl font-normal text-base leading-8 text-black mb-4"
@@ -414,7 +489,7 @@
             </div>
           </div>
 
-          <div class="col-span-5 relative">
+          <div class="md:col-span-5 relative">
             <img
               src="./images/work4.svg"
               alt="Motion graphics preview of project DDDone"
@@ -422,7 +497,6 @@
             />
             <div
               class="absolute bottom-4 left-4 text-white space-y-1 ml-6 flex flex-col items-baseline mb-6"
-              mb-6
             >
               <span
                 class="inline-block bg-white bg-opacity-50 px-4 py-[2px] rounded-3xl font-normal text-base leading-8 text-black mb-4"
@@ -437,6 +511,7 @@
             </div>
           </div>
         </article>
+
         <button
           type="button"
           class="border border-white flex self-center text-white px-6 py-2 rounded-md hover:bg-white hover:text-[#28293E] transition mt-20 uppercase"
@@ -444,38 +519,34 @@
           Explore More
         </button>
 
-        <!--  -->
         <div
-          class="mt-20 bg-[#FDF0E9] px-12 flex justify-between items-center gap-6"
+          class="mt-30 bg-[#FDF0E9] px-6 md:px-12 flex flex-col md:flex-row justify-between items-left gap-6"
         >
-          <div class="flex-1 pl-12 relative">
+          <div class="flex-1 relative px-2 md:pl-12">
             <img
               src="./images/icon.svg"
               alt="Decorative icon"
-              class="absolute"
-              style="top: -78%; left: 10%"
+              class="absolute md:top-[-120px] left-[0] top-[-80px] lg:left-[10%] lg:top-[-160px]"
             />
 
             <h5
-              class="text-[#EF6D58] font-normal text-[16px] leading-[32px] tracking-[3px] uppercase mt-8"
+              class="text-[#EF6D58] font-normal text-sm leading-8 tracking-[3px] uppercase md:mt-8 mt-30"
             >
               Get Started
             </h5>
-            <h4
-              class="font-bold text-[24px] leading-[32px] text-[#391400] mt-2 mb-4"
-            >
+            <h4 class="font-bold text-2xl leading-8 text-[#391400] mt-2 mb-4">
               We Help Companies <br />
               Move Faster
             </h4>
             <button
               type="button"
-              class="bg-[#EF6D58] text-white px-6 py-2 rounded-md hover:bg-[#d65b46] transition uppercase"
+              class="bg-[#EF6D58] text-md text-white px-6 py-2 rounded-md hover:bg-[#d65b46] transition uppercase"
             >
               Contact Us
             </button>
           </div>
 
-          <div class="flex-1 flex justify-center mt-12">
+          <div class="flex-1 flex justify-center mt-8 md:mt-12">
             <img
               src="./images/block.svg"
               alt="Abstract block illustration"
@@ -483,7 +554,7 @@
             />
           </div>
 
-          <div class="flex-1 flex justify-center relative">
+          <div class="flex-1 flex justify-center relative mt-8 md:mt-0">
             <img
               src="./images/Path.svg"
               alt="Decorative path background"
@@ -498,10 +569,9 @@
             />
           </div>
         </div>
-
         <main class="mt-20 px-4">
           <section>
-            <header class="">
+            <header>
               <h5
                 class="text-[#EF6D58] font-normal text-[16px] leading-[32px] tracking-[3px] uppercase mb-6"
               >
@@ -515,7 +585,7 @@
               </h2>
             </header>
 
-            <div class="flex justify-end mb-16 mt-[-42px]">
+            <div class="flex justify-end mb-16 mt-[-42px] hidden lg:flex">
               <img
                 src="./images/arrow.png"
                 alt="Arrow Icon"
@@ -523,156 +593,157 @@
               />
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
-              <!-- Team Member 1 -->
-              <article class="flex flex-col items-start w-full">
-                <figure
-                  class="border border-[#3A3C56] rounded-[6px] w-full h-[280px] flex justify-end p-4 pb-0 overflow-hidden"
+            <div
+              class="overflow-x-auto lg:overflow-visible mt-10 hide-scrollbar"
+            >
+              <div
+                class="flex lg:grid lg:grid-cols-4 gap-10 min-w-[768px] lg:min-w-0"
+              >
+                <article
+                  class="flex flex-col items-start w-[250px] lg:w-full flex-shrink-0"
                 >
-                  <img
-                    src="./images/team1.svg"
-                    alt="Azah Anyeni"
-                    class="w-full h-auto object-contain"
-                  />
-                </figure>
-                <h3
-                  class="text-white font-bold text-[24px] mt-8 mb-2 leading-[32px]"
-                >
-                  Azah Anyeni
-                </h3>
-                <p
-                  class="text-[#FFFFFFA3] font-normal text-[16px] leading-[32px]"
-                >
-                  Designer
-                </p>
-              </article>
+                  <figure
+                    class="border border-[#3A3C56] rounded-[6px] w-full h-[280px] flex justify-end p-4 pb-0 overflow-hidden"
+                  >
+                    <img
+                      src="./images/team1.svg"
+                      alt="Azah Anyeni"
+                      class="w-full h-auto object-contain"
+                    />
+                  </figure>
+                  <h3
+                    class="text-white font-bold text-[24px] mt-8 mb-2 leading-[32px]"
+                  >
+                    Azah Anyeni
+                  </h3>
+                  <p
+                    class="text-[#FFFFFFA3] font-normal text-[16px] leading-[32px]"
+                  >
+                    Designer
+                  </p>
+                </article>
 
-              <!-- Team Member 2 -->
-              <article class="flex flex-col items-start w-full">
-                <figure
-                  class="border border-[#3A3C56] rounded-[6px] w-full h-[280px] flex justify-end p-4 pb-0 overflow-hidden"
+                <article
+                  class="flex flex-col items-start w-[250px] lg:w-full flex-shrink-0"
                 >
-                  <img
-                    src="./images/team2.svg"
-                    alt="Roelof Bekkenenks"
-                    class="w-full h-auto object-contain"
-                  />
-                </figure>
-                <h3
-                  class="text-white font-bold text-[24px] mt-8 mb-2 leading-[32px]"
-                >
-                  Roelof Bekkenenks
-                </h3>
-                <p
-                  class="text-[#FFFFFFA3] font-normal text-[16px] leading-[32px]"
-                >
-                  React Developer
-                </p>
-              </article>
+                  <figure
+                    class="border border-[#3A3C56] rounded-[6px] w-full h-[280px] flex justify-end p-4 pb-0 overflow-hidden"
+                  >
+                    <img
+                      src="./images/team2.svg"
+                      alt="Roelof Bekkenenks"
+                      class="w-full h-auto object-contain"
+                    />
+                  </figure>
+                  <h3
+                    class="text-white font-bold text-[24px] mt-8 mb-2 leading-[32px]"
+                  >
+                    Roelof Bekkenenks
+                  </h3>
+                  <p
+                    class="text-[#FFFFFFA3] font-normal text-[16px] leading-[32px]"
+                  >
+                    React Developer
+                  </p>
+                </article>
 
-              <!-- Team Member 3 -->
-              <article class="flex flex-col items-start w-full">
-                <figure
-                  class="border border-[#3A3C56] rounded-[6px] w-full h-[280px] flex justify-end p-4 pb-0 overflow-hidden"
+                <article
+                  class="flex flex-col items-start w-[250px] lg:w-full flex-shrink-0"
                 >
-                  <img
-                    src="./images/team3.svg"
-                    alt="Leonardo Oliveira"
-                    class="w-full h-auto object-contain"
-                  />
-                </figure>
-                <h3
-                  class="text-white font-bold text-[24px] mt-8 mb-2 leading-[32px]"
-                >
-                  Leonardo Oliveira
-                </h3>
-                <p
-                  class="text-[#FFFFFFA3] font-normal text-[16px] leading-[32px]"
-                >
-                  Illustrator
-                </p>
-              </article>
+                  <figure
+                    class="border border-[#3A3C56] rounded-[6px] w-full h-[280px] flex justify-end p-4 pb-0 overflow-hidden"
+                  >
+                    <img
+                      src="./images/team3.svg"
+                      alt="Leonardo Oliveira"
+                      class="w-full h-auto object-contain"
+                    />
+                  </figure>
+                  <h3
+                    class="text-white font-bold text-[24px] mt-8 mb-2 leading-[32px]"
+                  >
+                    Leonardo Oliveira
+                  </h3>
+                  <p
+                    class="text-[#FFFFFFA3] font-normal text-[16px] leading-[32px]"
+                  >
+                    Illustrator
+                  </p>
+                </article>
 
-              <!-- Team Member 4 -->
-              <article class="flex flex-col items-start w-full">
-                <figure
-                  class="border border-[#3A3C56] rounded-[6px] w-full h-[280px] flex justify-end p-4 pb-0 overflow-hidden"
+                <article
+                  class="flex flex-col items-start w-[250px] lg:w-full flex-shrink-0"
                 >
-                  <img
-                    src="./images/team4.svg"
-                    alt="Izabella Tabakova"
-                    class="w-full h-auto object-contain"
-                  />
-                </figure>
-                <h3
-                  class="text-white font-bold text-[24px] mt-8 mb-2 leading-[32px]"
-                >
-                  Izabella Tabakova
-                </h3>
-                <p
-                  class="text-[#FFFFFFA3] font-normal text-[16px] leading-[32px]"
-                >
-                  Product Designer
-                </p>
-              </article>
+                  <figure
+                    class="border border-[#3A3C56] rounded-[6px] w-full h-[280px] flex justify-end p-4 pb-0 overflow-hidden"
+                  >
+                    <img
+                      src="./images/team4.svg"
+                      alt="Izabella Tabakova"
+                      class="w-full h-auto object-contain"
+                    />
+                  </figure>
+                  <h3
+                    class="text-white font-bold text-[24px] mt-8 mb-2 leading-[32px]"
+                  >
+                    Izabella Tabakova
+                  </h3>
+                  <p
+                    class="text-[#FFFFFFA3] font-normal text-[16px] leading-[32px]"
+                  >
+                    Product Designer
+                  </p>
+                </article>
+              </div>
             </div>
+
             <div class="flex justify-center mt-12">
-              <img src="./images/pins.svg" alt="Carousel Navigation" class="" />
+              <img src="./images/pins.svg" alt="Carousel Navigation" />
             </div>
           </section>
         </main>
       </div>
     </section>
-    <section class="bg-[#FDF0E9] py-14">
+    <section class="bg-[#FDF0E9] py-30 pb-10">
       <div class="max-w-7xl mx-auto px-4 w-full flex flex-col">
         <header class="mb-12">
           <h5
-            class="text-[#EF6D58] font-normal text-[16px] leading-[32px] tracking-[3px] uppercase mb-4"
+            class="text-[#EF6D58] font-normal text-sm leading-8 tracking-[3px] uppercase mb-4"
           >
             Pricing
           </h5>
           <h2
             class="font-extrabold text-[56px] text-[#391400] leading-[64px] tracking-[-1px]"
           >
-            Check Our <br />
-            Pricing Plans
+            Check Our <br />Pricing Plans
           </h2>
         </header>
 
-        <article class="flex flex-col md:flex-row w-full">
+        <article class="flex flex-col md:flex-row">
           <div
-            class="flex-1 border items-baseline border-[#e6cfc1] bg-[#FDF0E9] px-10 py-16 flex flex-col justify-between"
+            class="flex-1 border border-[#e6cfc1] bg-[#FDF0E9] px-10 py-16 flex flex-col justify-between items-baseline"
           >
             <div class="flex flex-col gap-6">
               <h5 class="text-xl font-normal text-[#EF6D58] uppercase">
                 Consultation
               </h5>
-              <h3 class="font-extrabold text-[40px] leading-[48px]">Free</h3>
-              <p
-                class="font-normal text-[16px] text-[#391400A3] leading-[32px]"
-              >
+              <h3 class="font-extrabold text-4xl leading-[48px]">Free</h3>
+              <p class="text-[#391400A3] text-base leading-8">
                 Your digital marketing efforts, instead of handling in-house.
               </p>
               <ul class="space-y-2 mb-6">
-                <li
-                  class="flex items-center gap-4 text-[#391400] text-[16px] leading-[32px]"
-                >
-                  <img src="./images/plus.svg" alt="" /> Brand Design
+                <li class="flex items-center gap-4 text-[#391400]">
+                  <img src="./images/plus.svg" /> Brand Design
                 </li>
-                <li
-                  class="flex items-center gap-4 text-[#391400A3] text-[16px] leading-[32px]"
-                >
-                  <img src="./images/plus.svg" alt="" /> Market Analysis
+                <li class="flex items-center gap-4 text-[#391400A3]">
+                  <img src="./images/plus.svg" /> Market Analysis
                 </li>
-                <li
-                  class="flex items-center gap-4 text-[#391400A3] text-[16px] leading-[32px]"
-                >
-                  <img src="./images/minus.svg" alt="" /> Production
+                <li class="flex items-center gap-4 text-[#391400A3]">
+                  <img src="./images/minus.svg" /> Production
                 </li>
               </ul>
             </div>
             <button
-              type="button"
               class="bg-white text-[#391400] font-semibold px-6 py-2 rounded-md hover:bg-[#d65b46] transition uppercase"
             >
               Contact Us
@@ -680,45 +751,35 @@
           </div>
 
           <div
-            class="flex-1 border border-[#e6cfc1] bg-white p-8 py-16 flex flex-col justify-between transform scale-105 origin-bottom items-baseline z-10 shadow-xl"
+            class="flex-1 border border-[#e6cfc1] bg-white p-10 py-16 flex flex-col justify-between md:transform md:scale-105 md:origin-bottom items-baseline md:z-10 md:shadow-lg"
           >
-            <div class="flex flex-col gap-6">
+            <div class="flex flex-col gap-6 items-baseline">
               <button
-                type="button"
-                class="self-start bg-[#EF6D58] text-white px-4 py-1 rounded-md text-sm uppercase mb-2"
+                class="bg-[#EF6D58] text-white px-4 py-1 rounded-md text-sm uppercase mb-2"
               >
                 Popular
               </button>
               <h5 class="text-xl font-normal text-[#EF6D58] uppercase">
                 Design
               </h5>
-              <h3 class="font-extrabold text-[40px] leading-[48px]">$1500</h3>
-              <p
-                class="font-normal text-[16px] text-[#391400A3] leading-[32px]"
-              >
+              <h3 class="font-extrabold text-4xl leading-[48px]">$1500</h3>
+              <p class="text-[#391400A3] text-base leading-8">
                 Provide your business with a variety of digital solutions to
                 promote.
               </p>
               <ul class="space-y-2 mb-6">
-                <li
-                  class="flex items-center gap-4 text-[#391400] text-[16px] leading-[32px]"
-                >
-                  <img src="./images/plus.svg" alt="" /> Brand Design
+                <li class="flex items-center gap-4 text-[#391400]">
+                  <img src="./images/plus.svg" /> Brand Design
                 </li>
-                <li
-                  class="flex items-center gap-4 text-[#391400A3] text-[16px] leading-[32px]"
-                >
-                  <img src="./images/minus.svg" alt="" /> Market Analysis
+                <li class="flex items-center gap-4 text-[#391400A3]">
+                  <img src="./images/minus.svg" /> Market Analysis
                 </li>
-                <li
-                  class="flex items-center gap-4 text-[#391400A3] text-[16px] leading-[32px]"
-                >
-                  <img src="./images/minus.svg" alt="" /> Production
+                <li class="flex items-center gap-4 text-[#391400A3]">
+                  <img src="./images/minus.svg" /> Production
                 </li>
               </ul>
             </div>
             <button
-              type="button"
               class="bg-[#EF6D58] text-white px-6 py-2 rounded-md hover:bg-[#d65b46] transition uppercase"
             >
               Contact Us
@@ -732,32 +793,23 @@
               <h5 class="text-xl font-normal text-[#EF6D58] uppercase">
                 Design+Code
               </h5>
-              <h3 class="font-extrabold text-[40px] leading-[48px]">$2900</h3>
-              <p
-                class="font-normal text-[16px] text-[#391400A3] leading-[32px]"
-              >
+              <h3 class="font-extrabold text-4xl leading-[48px]">$2900</h3>
+              <p class="text-[#391400A3] text-base leading-8">
                 Help you hit your marketing goals and grow your business.
               </p>
               <ul class="space-y-2 mb-6">
-                <li
-                  class="flex items-center gap-4 text-[#391400] text-[16px] leading-[32px]"
-                >
-                  <img src="./images/plus.svg" alt="" /> Brand Design
+                <li class="flex items-center gap-4 text-[#391400]">
+                  <img src="./images/plus.svg" /> Brand Design
                 </li>
-                <li
-                  class="flex items-center gap-4 text-[#391400A3] text-[16px] leading-[32px]"
-                >
-                  <img src="./images/minus.svg" alt="" /> Market Analysis
+                <li class="flex items-center gap-4 text-[#391400A3]">
+                  <img src="./images/minus.svg" /> Market Analysis
                 </li>
-                <li
-                  class="flex items-center gap-4 text-[#391400A3] text-[16px] leading-[32px]"
-                >
-                  <img src="./images/minus.svg" alt="" /> Production
+                <li class="flex items-center gap-4 text-[#391400A3]">
+                  <img src="./images/minus.svg" /> Production
                 </li>
               </ul>
             </div>
             <button
-              type="button"
               class="bg-[#EF6D58] text-white px-6 py-2 rounded-md hover:bg-[#d65b46] transition uppercase"
             >
               Contact Us
@@ -765,128 +817,84 @@
           </div>
         </article>
 
-        <section class="flex mt-20">
+        <section class="flex flex-col md:flex-row mt-20 gap-10">
           <div class="w-full md:w-1/2">
-            <header class="mb-8">
-              <h5
-                class="text-[#EF6D58] font-normal text-[16px] leading-[32px] tracking-[3px] uppercase"
-              >
-                Faq
-              </h5>
-              <h2
-                class="font-extrabold text-[40px] leading-[48px] text-[#391400] mb-6"
-              >
-                Frequently Asked <br />
-                Questions
-              </h2>
-              <p class="text-[#391400] font-normal text-[16px] leading-[32px]">
-                A digital agency is a business you hire to outsource your
-                <br />
-                digital marketing efforts, instead of handling in-house.
-              </p>
-              <a
-                href="#"
-                class="inline-block no-underline mt-6 font-normal text-[16px] leading-[32px] text-[#391400] hover:text-[#EF6D58] transition"
-              >
-                Contact us
-              </a>
-            </header>
+            <h5 class="text-[#EF6D58] text-sm tracking-[3px] uppercase mb-2">
+              FAQ
+            </h5>
+            <h2
+              class="font-extrabold text-4xl leading-[48px] text-[#391400] mb-4"
+            >
+              Frequently Asked <br />
+              Questions
+            </h2>
+            <p class="text-[#391400] text-base leading-8 mb-4">
+              A digital agency is a business you hire to outsource your digital
+              marketing efforts, instead of handling in-house.
+            </p>
+            <a href="#" class="text-[#391400] hover:text-[#EF6D58] underline"
+              >Contact us</a
+            >
           </div>
 
           <div class="w-full md:w-1/2">
-            <div class="bg-white rounded-lg shadow-lg">
-              <div class="border-b-2 border-[#F3D1BF]">
-                <div class="p-6">
-                  <input
-                    type="radio"
-                    id="accordion-1"
-                    name="accordion"
-                    class="hidden"
-                    checked
-                  />
-                  <label
-                    for="accordion-1"
-                    class="flex justify-between w-full text-left font-bold text-[24px] leading-[32px] text-[#391400] py-4 px-4 rounded-md cursor-pointer"
-                  >
-                    A digital agency is a business
-                    <img src="./images/up.svg" alt="" />
-                  </label>
-                  <div
-                    class="accordion-content px-4 py-2 text-[16px] leading-[32px] text-[#391400] hidden"
-                  >
-                    Digital marketing efforts, instead of handling in-house.
-                    They can provide your business with a variety of digital
-                    solutions to promote your product or service online and help
-                    you hit your marketing goals and grow your business.
-                  </div>
-                </div>
+            <div
+              class="bg-white rounded-lg shadow-lg divide-y divide-[#F3D1BF]"
+            >
+              <details open class="p-6">
+                <summary
+                  class="font-bold text-2xl text-[#391400] cursor-pointer flex justify-between items-center"
+                >
+                  A digital agency is a business
+                  <img src="./images/up.svg" alt="" />
+                </summary>
+                <p class="text-[#391400] mt-4 text-base leading-8">
+                  Digital marketing efforts, instead of handling in-house. They
+                  can provide your business with a variety of digital solutions
+                  to promote your product or service online and help you hit
+                  your marketing goals and grow your business.
+                </p>
+              </details>
 
-                <div class="p-6 bg-[#FDF0E9] border-b-2 border-[#F3D1BF]">
-                  <input
-                    type="radio"
-                    id="accordion-2"
-                    name="accordion"
-                    class="hidden"
-                  />
-                  <label
-                    for="accordion-2"
-                    class="flex justify-between w-full text-left font-bold text-[24px] leading-[32px] text-[#391400] py-4 px-4 rounded-md cursor-pointer"
-                  >
-                    A digital agency is a business
-                    <img src="./images/down.svg" alt="" />
-                  </label>
-                  <div
-                    class="accordion-content px-4 py-2 text-[16px] leading-[32px] text-[#391400] hidden"
-                  >
-                    A digital agency helps you scale your marketing efforts and
-                    focus on core business functions.
-                  </div>
-                </div>
+              <details class="p-6 bg-[#FDF0E9]">
+                <summary
+                  class="font-bold text-2xl text-[#391400] cursor-pointer flex justify-between items-center"
+                >
+                  Why hire a digital agency?
+                  <img src="./images/down.svg" alt="" />
+                </summary>
+                <p class="text-[#391400] mt-4 text-base leading-8">
+                  A digital agency helps you scale your marketing efforts and
+                  focus on core business functions.
+                </p>
+              </details>
 
-                <div class="p-6 bg-[#FDF0E9] border-b-2 border-[#F3D1BF]">
-                  <input
-                    type="radio"
-                    id="accordion-3"
-                    name="accordion"
-                    class="hidden"
-                  />
-                  <label
-                    for="accordion-3"
-                    class="flex justify-between w-full text-left font-bold text-[24px] leading-[32px] text-[#391400] py-4 px-4 rounded-md cursor-pointer"
-                  >
-                    A digital agency is a business
-                    <img src="./images/down.svg" alt="" />
-                  </label>
-                  <div
-                    class="accordion-content px-4 py-2 text-[16px] leading-[32px] text-[#391400] hidden"
-                  >
-                    A digital agency helps you scale your marketing efforts and
-                    focus on core business functions.
-                  </div>
-                </div>
+              <details class="p-6 bg-[#FDF0E9]">
+                <summary
+                  class="font-bold text-2xl text-[#391400] cursor-pointer flex justify-between items-center"
+                >
+                  What services do they offer?
+                  <img src="./images/down.svg" alt="" />
+                </summary>
+                <p class="text-[#391400] mt-4 text-base leading-8">
+                  From branding, SEO, content creation to digital
+                  advertising—they handle everything needed to build your online
+                  presence.
+                </p>
+              </details>
 
-                <div class="p-6 bg-[#FDF0E9]">
-                  <input
-                    type="radio"
-                    id="accordion-4"
-                    name="accordion"
-                    class="hidden"
-                  />
-                  <label
-                    for="accordion-4"
-                    class="flex justify-between w-full text-left font-bold text-[24px] leading-[32px] text-[#391400] py-4 px-4 rounded-md cursor-pointer"
-                  >
-                    A digital agency is a business
-                    <img src="./images/down.svg" alt="" />
-                  </label>
-                  <div
-                    class="accordion-content px-4 py-2 text-[16px] leading-[32px] text-[#391400] hidden"
-                  >
-                    A digital agency helps you scale your marketing efforts and
-                    focus on core business functions.
-                  </div>
-                </div>
-              </div>
+              <details class="p-6 bg-[#FDF0E9]">
+                <summary
+                  class="font-bold text-2xl text-[#391400] cursor-pointer flex justify-between items-center"
+                >
+                  How to get started?
+                  <img src="./images/down.svg" alt="" />
+                </summary>
+                <p class="text-[#391400] mt-4 text-base leading-8">
+                  Simply contact us using the button above and we’ll guide you
+                  through a custom consultation.
+                </p>
+              </details>
             </div>
           </div>
         </section>
@@ -898,10 +906,10 @@
         <div class="max-w-7xl mx-auto px-4 w-full">
           <form
             action="#"
-            class="w-full md:w-[480px] h-[470px] bg-white p-10 border-t-4 border-[#F3D1BF] rounded-lg shadow-lg"
+            class="w-full md:w-[480px] h-[470px] bg-white p-8 flex flex-col justify-center border-t-4 border-[#F3D1BF] rounded-lg shadow-lg"
           >
             <h4
-              class="font-bold text-[24px] leading-[32px] text-[#391400] mb-6"
+              class="font-bold text-[24px] leading-[32px] capitalize text-[#391400] mb-6"
             >
               Get in touch
             </h4>
@@ -919,13 +927,13 @@
                 name="subject"
                 class="w-full border border-[#F3D1BF] px-4 py-3 rounded-md focus:outline-none"
               >
-                <option value="">Select Subject</option>
+                <option value="">Subject</option>
                 <option value="general">General Inquiry</option>
                 <option value="support">Support</option>
               </select>
             </div>
 
-            <div class="mb-4">
+            <div class="mb-6">
               <input
                 type="text"
                 placeholder="Your Message"
@@ -936,14 +944,152 @@
             <div class="flex justify-end">
               <button
                 type="submit"
-                class="bg-[#EF6D58] text-[#fff] uppercase font-semibold px-6 py-2 rounded-md hover:bg-[#e7bca5] transition"
+                class="bg-[#EF6D58] text-[#fff] uppercase font-medium px-6 py-3 rounded-md hover:bg-[#e7bca5] transition"
               >
-                Submit
+                Submit now
               </button>
             </div>
           </form>
         </div>
       </section>
+
+      <footer class="w-full bg-white px-4 py-8 mt-20 md:text-left text-center">
+        <div
+          class="max-w-7xl mx-auto flex flex-col md:flex-row md:flex-wrap justify-between gap-8 items-center md:items-start"
+        >
+          <div class="mt-4">
+            <h4 class="text-[#391400] text-2xl font-bold">Get in touch</h4>
+          </div>
+
+          <div class="mt-4">
+            <h5
+              class="text-[#EF6D58] text-sm font-normal uppercase tracking-widest mb-4"
+            >
+              Menu
+            </h5>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="#"
+                  class="text-[#391400] text-base hover:text-[#EF6D58] transition"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-[#391400] text-base hover:text-[#EF6D58] transition"
+                  >Services</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-[#391400] text-base hover:text-[#EF6D58] transition"
+                  >Blog</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-[#391400] text-base hover:text-[#EF6D58] transition"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="mt-4">
+            <h5
+              class="text-[#EF6D58] text-sm font-medium uppercase tracking-widest mb-4"
+            >
+              Service
+            </h5>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="#"
+                  class="text-[#391400] text-base hover:text-[#EF6D58] transition"
+                  >Design</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-[#391400] text-base hover:text-[#EF6D58] transition"
+                  >Development</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-[#391400] text-base hover:text-[#EF6D58] transition"
+                  >Marketing</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-[#391400] text-base hover:text-[#EF6D58] transition"
+                  >See More</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="flex space-x-4 items-start mt-4">
+            <a
+              href="#"
+              aria-label="Facebook"
+              class="p-3 rounded-full bg-[#EF6D58] hover:bg-[#d85a47] transition"
+            >
+              <img src="./images/facebook.svg" alt="Facebook" class="w-4 h-4" />
+            </a>
+            <a
+              href="#"
+              aria-label="Twitter"
+              class="p-3 rounded-full bg-[#EF6D58] hover:bg-[#d85a47] transition"
+            >
+              <img src="./images/twitter.svg" alt="Twitter" class="w-4 h-4" />
+            </a>
+            <a
+              href="#"
+              aria-label="Instagram"
+              class="p-3 rounded-full bg-[#EF6D58] hover:bg-[#d85a47] transition"
+            >
+              <img
+                src="./images/instagram.svg"
+                alt="Instagram"
+                class="w-4 h-4"
+              />
+            </a>
+          </div>
+        </div>
+
+        <hr class="border-t border-[#F3D1BF] my-10" />
+
+        <div
+          class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4"
+        >
+          <p class="text-[#391400A3] text-base text-center md:text-left">
+            © 2022 Laaqiq. All Rights Reserved.
+          </p>
+          <div class="flex gap-6">
+            <a
+              href="#"
+              class="text-[#391400] text-base hover:text-[#EF6D58] transition"
+              >Terms of Use</a
+            >
+            <a
+              href="#"
+              class="text-[#391400] text-base hover:text-[#EF6D58] transition"
+              >Privacy Policy</a
+            >
+          </div>
+        </div>
+      </footer>
     </section>
+
+    <script src="./index.js"></script>
   </body>
 </html>
